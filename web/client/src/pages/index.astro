@@ -1,0 +1,169 @@
+---
+// Sent-Code Official Landing Page (Astro 5)
+---
+
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sent-Code — Native Vibe Coding IDE</title>
+  <meta name="description" content="A lightweight native AI coding IDE powered by Grok Build, Local Qwen2.5-Coder, and Groq Cloud Vision. Build faster with zero API costs." />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+</head>
+<body class="bg-[#0b0c0e] text-[#d4d6da] font-sans selection:bg-cyan-500/20 selection:text-cyan-200">
+
+  <!-- ── NAV ────────────────────────────────── -->
+  <header class="border-b border-[#151820] backdrop-blur-md sticky top-0 z-50 bg-[#0b0c0e]/90">
+    <nav class="max-w-6xl mx-auto px-6 h-15 flex items-center justify-between py-4">
+      <div class="flex items-center gap-3">
+        <div class="w-8 h-8 rounded-lg bg-gradient-to-tr from-cyan-500 to-emerald-400 text-gray-950 flex items-center justify-center font-bold shadow-lg shadow-cyan-500/20">⚡</div>
+        <span class="font-bold text-white tracking-wide">Sent-Code</span>
+        <span class="px-2 py-0.5 rounded text-[10px] bg-[#15181e] text-cyan-400 border border-cyan-800/30 font-mono">v1.0.0</span>
+      </div>
+      <div class="flex items-center gap-6">
+        <a href="#features" class="text-sm text-gray-400 hover:text-white transition hidden md:block">Features</a>
+        <a href="#models" class="text-sm text-gray-400 hover:text-white transition hidden md:block">AI Models</a>
+        <a href="/admin" class="text-sm text-gray-400 hover:text-cyan-400 transition hidden md:block">Admin</a>
+        <a href="#download"
+           class="px-4 py-2 bg-white text-gray-950 hover:bg-gray-100 rounded-lg font-semibold text-xs transition shadow-sm">
+          Download Free
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ── HERO ──────────────────────────────── -->
+  <section class="max-w-5xl mx-auto px-6 pt-24 pb-20 text-center">
+    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs bg-[#13151b] border border-[#1e2230] text-gray-400 mb-8">
+      <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+      Now with Groq Cloud Vision (0.3s) + Local Qwen2.5-Coder 7B
+    </div>
+
+    <h1 class="text-5xl sm:text-6xl md:text-7xl font-extrabold text-white tracking-tight mb-6 leading-[1.1]">
+      Code at the Speed<br/>
+      <span class="bg-gradient-to-r from-cyan-400 via-teal-300 to-emerald-400 bg-clip-text text-transparent">
+        of Thought.
+      </span>
+    </h1>
+
+    <p class="text-gray-400 text-lg max-w-2xl mx-auto mb-10 leading-relaxed">
+      A native desktop IDE that pairs cloud-fast Grok Build with offline Qwen AI —
+      no API key required, no monthly bill, no compromise.
+    </p>
+
+    <!-- CTA Buttons -->
+    <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-6" id="download">
+      <a href="/download/Sent-Code.exe"
+         class="w-full sm:w-auto flex items-center justify-center gap-2 px-8 py-3.5 bg-gradient-to-r from-cyan-500 to-emerald-500 hover:from-cyan-400 hover:to-emerald-400 text-gray-950 font-bold rounded-xl transition shadow-xl shadow-cyan-500/10 text-sm">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+        </svg>
+        Download Sent-Code.exe for Windows
+      </a>
+      <a href="/download"
+         class="w-full sm:w-auto px-6 py-3.5 bg-[#15181e] hover:bg-[#1a1d25] text-gray-300 rounded-xl font-medium text-sm border border-[#20232c] transition">
+        System Requirements & Setup →
+      </a>
+    </div>
+    <p class="text-xs text-gray-600">Windows 10/11 (64-bit) · ~12 MB · Standalone Portable App</p>
+  </section>
+
+  <!-- ── FEATURE CARDS ──────────────────────── -->
+  <section class="max-w-5xl mx-auto px-6 pb-20" id="features">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+
+      <div class="p-6 rounded-2xl bg-[#111318] border border-[#1b1e27]">
+        <div class="w-10 h-10 rounded-xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center text-xl mb-4">✨</div>
+        <h3 class="text-white font-semibold text-sm mb-2">Grok Build Cloud</h3>
+        <p class="text-gray-500 text-xs leading-relaxed">Zero API cost. Connect with your official xAI account and run Fast / Auto / Expert / Heavy modes at no extra charge.</p>
+      </div>
+
+      <div class="p-6 rounded-2xl bg-[#111318] border border-[#1b1e27]">
+        <div class="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-xl mb-4">💻</div>
+        <h3 class="text-white font-semibold text-sm mb-2">Hierarchical Qwen-Coder Tiers</h3>
+        <p class="text-gray-500 text-xs leading-relaxed">Select between 3B (Super Fast), 7B (Balanced), 14B (Deep Logic), or 32B (Expert). Hardware specs auto-evaluated before install.</p>
+      </div>
+
+      <div class="p-6 rounded-2xl bg-[#111318] border border-[#1b1e27]">
+        <div class="w-10 h-10 rounded-xl bg-teal-500/10 text-teal-400 flex items-center justify-center text-xl mb-4">🌐</div>
+        <h3 class="text-white font-semibold text-sm mb-2">Two-Way Language Gateway</h3>
+        <p class="text-gray-500 text-xs leading-relaxed">Translates prompts to English for razor-sharp AI logic, and translates explanations back to Thai or user language without corrupting code.</p>
+      </div>
+
+      <div class="p-6 rounded-2xl bg-[#111318] border border-[#1b1e27]">
+        <div class="w-10 h-10 rounded-xl bg-purple-500/10 text-purple-400 flex items-center justify-center text-xl mb-4">👁️</div>
+        <h3 class="text-white font-semibold text-sm mb-2">Groq Vision Gateway</h3>
+        <p class="text-gray-500 text-xs leading-relaxed">Paste UI mockups and bug screenshots to generate production-ready code in 0.3 seconds via ultra-fast LPU inference.</p>
+      </div>
+
+      <div class="p-6 rounded-2xl bg-[#111318] border border-[#1b1e27]">
+        <div class="w-10 h-10 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center text-xl mb-4">🧠</div>
+        <h3 class="text-white font-semibold text-sm mb-2">OS-Level External Memory</h3>
+        <p class="text-gray-500 text-xs leading-relaxed">AI acts purely as the thinking engine. Project context, file history, and technical terminology are managed natively on your OS.</p>
+      </div>
+
+      <div class="p-6 rounded-2xl bg-[#111318] border border-[#1b1e27]">
+        <div class="w-10 h-10 rounded-xl bg-indigo-500/10 text-indigo-400 flex items-center justify-center text-xl mb-4">🛡️</div>
+        <h3 class="text-white font-semibold text-sm mb-2">Auto Test Build & Self-Fix</h3>
+        <p class="text-gray-500 text-xs leading-relaxed">Runs your build command inside the project, catches terminal errors, and automatically self-heals code until the build passes.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── AI MODELS ──────────────────────────── -->
+  <section class="max-w-5xl mx-auto px-6 pb-24" id="models">
+    <div class="text-center mb-10">
+      <h2 class="text-2xl font-bold text-white mb-2">Hybrid Intelligence Architecture</h2>
+      <p class="text-gray-500 text-sm">Switch effortlessly between high-capacity cloud models and 100% private offline inference.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+      <div class="p-6 rounded-2xl bg-[#111318] border border-cyan-800/20">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-10 h-10 rounded-xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center text-xl">☁️</div>
+          <div>
+            <div class="text-white font-semibold text-sm">Grok Build (Cloud)</div>
+            <div class="text-cyan-400 text-xs">Official xAI — Zero API Cost</div>
+          </div>
+        </div>
+        <ul class="text-xs text-gray-500 space-y-1.5">
+          <li class="flex items-center gap-2"><span class="text-emerald-400">✓</span> Fast / Auto / Expert / Heavy compute modes</li>
+          <li class="flex items-center gap-2"><span class="text-emerald-400">✓</span> Full multimodal vision (paste screenshots)</li>
+          <li class="flex items-center gap-2"><span class="text-emerald-400">✓</span> Works on any PC — zero local GPU required</li>
+          <li class="flex items-center gap-2"><span class="text-emerald-400">✓</span> Built-in session resumption from disk</li>
+        </ul>
+      </div>
+
+      <div class="p-6 rounded-2xl bg-[#111318] border border-emerald-800/20">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-xl">🖥️</div>
+          <div>
+            <div class="text-white font-semibold text-sm">Qwen2.5-Coder Tiers (Local)</div>
+            <div class="text-emerald-400 text-xs">Private Ollama Engine — 100% Offline</div>
+          </div>
+        </div>
+        <ul class="text-xs text-gray-500 space-y-1.5">
+          <li class="flex items-center gap-2"><span class="text-emerald-400">✓</span> 3B, 7B, 14B, 32B model sizes available</li>
+          <li class="flex items-center gap-2"><span class="text-emerald-400">✓</span> Real-time RAM/VRAM compatibility check before install</li>
+          <li class="flex items-center gap-2"><span class="text-emerald-400">✓</span> Code stays strictly on your computer</li>
+          <li class="flex items-center gap-2"><span class="text-emerald-400">✓</span> No internet connection needed once downloaded</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ────────────────────────────── -->
+  <footer class="border-t border-[#151820] py-8 text-center">
+    <p class="text-xs text-gray-600">
+      © 2026 Sent-Code IDE — Built with Go 1.24 · Wails v2 · React 19 · Astro 5
+    </p>
+    <div class="flex items-center justify-center gap-4 mt-3">
+      <a href="/admin" class="text-xs text-gray-600 hover:text-gray-400 transition">Admin</a>
+      <a href="/api/health" class="text-xs text-gray-600 hover:text-gray-400 transition">API Status</a>
+    </div>
+  </footer>
+
+</body>
+</html>

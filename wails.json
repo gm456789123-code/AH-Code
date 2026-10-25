@@ -1,0 +1,20 @@
+{
+  "$schema": "https://wails.io/schemas/config.v2.json",
+  "name": "AH-Code",
+  "outputfilename": "AH-Code",
+  "info": {
+    "companyName": "Sent-Code",
+    "productName": "AH-Code",
+    "productVersion": "0.1.0",
+    "copyright": "Copyright 2026 Sent-Code",
+    "comments": "AH-Code desktop application"
+  },
+  "frontend:install": "npm install",
+  "frontend:build": "npm run build",
+  "frontend:dev:watcher": "npm run dev",
+  "frontend:dev:serverUrl": "auto",
+  "author": {
+    "name": "",
+    "email": ""
+  }
+}

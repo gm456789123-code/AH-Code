@@ -1,0 +1,782 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3.0, user-scalable=1;">
+  <meta name="referrer" content="origin">
+  <meta name="HandheldFriendly" content="true" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>golang context package at DuckDuckGo</title>
+  <link title="DuckDuckGo (Lite)" type="application/opensearchdescription+xml" rel="search" href="//duckduckgo.com/opensearch_lite_v2.xml">
+  <link href="//duckduckgo.com/favicon.ico" rel="shortcut icon" />
+  <link rel="icon" href="//duckduckgo.com/favicon.ico" type="image/x-icon" />
+  <link id="icon60" rel="apple-touch-icon" href="//duckduckgo.com/assets/icons/meta/DDG-iOS-icon_60x60.png?v=2"/>
+  <link id="icon76" rel="apple-touch-icon" sizes="76x76" href="//duckduckgo.com/assets/icons/meta/DDG-iOS-icon_76x76.png?v=2"/>
+  <link id="icon120" rel="apple-touch-icon" sizes="120x120" href="//duckduckgo.com/assets/icons/meta/DDG-iOS-icon_120x120.png?v=2"/>
+  <link id="icon152" rel="apple-touch-icon" sizes="152x152" href="//duckduckgo.com/assets/icons/meta/DDG-iOS-icon_152x152.png?v=2"/>
+  <link rel="image_src" href="//duckduckgo.com/assets/icons/meta/DDG-icon_256x256.png">
+  <link rel="stylesheet" media="handheld, all" href="//duckduckgo.com/dist/lr.48ddfe4eadf6a534e93f.css" type="text/css"/>
+</head>
+
+<body>
+  <p class='extra'>&nbsp;</p>
+  <div class="header">
+    DuckDuckGo
+  </div>
+  <p class='extra'>&nbsp;</p>
+
+  <form action="/lite/" method="post">
+      <input class='query' type="text" size="40" name="q" value="golang context package">
+      <input class='submit' type="submit" value="Search">
+      
+      
+      
+      
+
+      <div class="filters">
+        <select class="submit" name="kl">
+          
+            <option value="" >All Regions</option>
+          
+            <option value="ar-es" >Argentina</option>
+          
+            <option value="au-en" >Australia</option>
+          
+            <option value="at-de" >Austria</option>
+          
+            <option value="be-fr" >Belgium (fr)</option>
+          
+            <option value="be-nl" >Belgium (nl)</option>
+          
+            <option value="br-pt" >Brazil</option>
+          
+            <option value="bg-bg" >Bulgaria</option>
+          
+            <option value="ca-en" >Canada (en)</option>
+          
+            <option value="ca-fr" >Canada (fr)</option>
+          
+            <option value="ct-ca" >Catalonia</option>
+          
+            <option value="cl-es" >Chile</option>
+          
+            <option value="cn-zh" >China</option>
+          
+            <option value="co-es" >Colombia</option>
+          
+            <option value="hr-hr" >Croatia</option>
+          
+            <option value="cz-cs" >Czech Republic</option>
+          
+            <option value="dk-da" >Denmark</option>
+          
+            <option value="ee-et" >Estonia</option>
+          
+            <option value="fi-fi" >Finland</option>
+          
+            <option value="fr-fr" >France</option>
+          
+            <option value="de-de" >Germany</option>
+          
+            <option value="gr-el" >Greece</option>
+          
+            <option value="hk-tzh" >Hong Kong</option>
+          
+            <option value="hu-hu" >Hungary</option>
+          
+            <option value="is-is" >Iceland</option>
+          
+            <option value="in-en" >India (en)</option>
+          
+            <option value="id-en" >Indonesia (en)</option>
+          
+            <option value="ie-en" >Ireland</option>
+          
+            <option value="il-en" >Israel (en)</option>
+          
+            <option value="it-it" >Italy</option>
+          
+            <option value="jp-jp" >Japan</option>
+          
+            <option value="kr-kr" >Korea</option>
+          
+            <option value="lv-lv" >Latvia</option>
+          
+            <option value="lt-lt" >Lithuania</option>
+          
+            <option value="my-en" >Malaysia (en)</option>
+          
+            <option value="mx-es" >Mexico</option>
+          
+            <option value="nl-nl" >Netherlands</option>
+          
+            <option value="nz-en" >New Zealand</option>
+          
+            <option value="no-no" >Norway</option>
+          
+            <option value="pk-en" >Pakistan (en)</option>
+          
+            <option value="pe-es" >Peru</option>
+          
+            <option value="ph-en" >Philippines (en)</option>
+          
+            <option value="pl-pl" >Poland</option>
+          
+            <option value="pt-pt" >Portugal</option>
+          
+            <option value="ro-ro" >Romania</option>
+          
+            <option value="ru-ru" >Russia</option>
+          
+            <option value="xa-ar" >Saudi Arabia</option>
+          
+            <option value="sg-en" >Singapore</option>
+          
+            <option value="sk-sk" >Slovakia</option>
+          
+            <option value="sl-sl" >Slovenia</option>
+          
+            <option value="za-en" >South Africa</option>
+          
+            <option value="es-ca" >Spain (ca)</option>
+          
+            <option value="es-es" >Spain (es)</option>
+          
+            <option value="se-sv" >Sweden</option>
+          
+            <option value="ch-de" >Switzerland (de)</option>
+          
+            <option value="ch-fr" >Switzerland (fr)</option>
+          
+            <option value="tw-tzh" >Taiwan</option>
+          
+            <option value="th-en" >Thailand (en)</option>
+          
+            <option value="tr-tr" >Turkey</option>
+          
+            <option value="us-en" >US (English)</option>
+          
+            <option value="us-es" >US (Spanish)</option>
+          
+            <option value="ua-uk" >Ukraine</option>
+          
+            <option value="uk-en" >United Kingdom</option>
+          
+            <option value="vn-en" >Vietnam (en)</option>
+          
+        </select>
+
+        <select class="submit" name="df">
+          
+            <option value="" selected>Any Time</option>
+          
+            <option value="d" >Past Day</option>
+          
+            <option value="w" >Past Week</option>
+          
+            <option value="m" >Past Month</option>
+          
+            <option value="y" >Past Year</option>
+          
+        </select>
+      </div>
+  </form>
+
+  
+    <p class="extra">&nbsp;</p>
+    <table border="0">
+      <tr>
+        <td>
+          
+        </td>
+        <td>
+          
+            <!-- Next Page Button Sub-template -->
+<form class="next_form" action="/lite/" method="post">
+    <input type="submit" class='navbutton' value="Next Page &gt;">
+    <input type="hidden" name="q" value="golang context package">
+    <input type="hidden" name="s" value="10">
+    <input type="hidden" name="nextParams" value="">
+    <input type="hidden" name="v" value="l">
+    <input type="hidden" name="o" value="json">
+    <input type="hidden" name="dc" value="12">
+    <input type="hidden" name="api" value="d.js">
+    <input type="hidden" name="vqd" value="4-70995434087772222586881006054021529992">
+    &nbsp;&nbsp;&nbsp;&nbsp;
+    
+    
+    
+      <input name="kl" value="wt-wt" type="hidden">
+    
+    
+    
+    
+</form>
+          
+        </td>
+      </tr>
+    </table>
+  
+
+  
+
+  <p class='extra'>&nbsp;</p>
+
+  <table border="0">
+    
+  </table>
+
+  <table border="0">
+    
+      
+      <!-- Web results are present -->
+      
+        
+          
+
+            <tr class="result-sponsored">
+              
+                <!-- Sponsored result with counter -->
+                <td valign="top">
+                  
+                    1.&nbsp;
+                  
+                </td>
+                <td>
+                  <a rel="nofollow" href="//duckduckgo.com/l/?uddg=https%3A%2F%2Fduckduckgo.com%2Fy.js%3Fad_domain%3Dudemy.com%26ad_provider%3Dbingv7aa%26ad_type%3Dtxad%26click_metadata%3DHvn1Uli0V4r7q9lrNATaNJOwnsxNA0aXY6dnENZvMiTI0bgJkLsa6du6JpmdqUJe_7nJ8aVz_2Udire20T69B08vjtFQhKzO61LKrdhX5M882jaX8otFRInAp3WJZJ_mOSjlpOccEvt9a0cMNV34PSfrNw6wIl8IXy0ZALiBWNA.2Y%252DAr1ten2HZwaCd31wyMQ%26rut%3De700bd3a6be40dc70316c2239b8bc4727bf548c93963f5dde4f085e24a0191bc%26u3%3Dhttps%253A%252F%252Fwww.bing.com%252Faclick%253Fld%253De8HWqgKpgtmmQr9GKT1drbVDVUCUxSD5X4f1z1H3L%252DSxPKs8uL5ydjm0DeicxFkt_sFCTndxqNl99kc_EhWSRLg6Q0HJBzY4QhdbDN_CJWPjmB4f4A1_jfcX876U%252DAGgSFNg6nv3Pe93BM0b6f3oOp1cmhBuKmsiPrs4nrEntjlKnAdYXrsua1ogwr2YZ8UO9ZRoNlu%252DZxSBjD4v%252Dk6_WlCuhv22Q%2526u%253DaHR0cHMlM2ElMmYlMmZ3d3cudWRlbXkuY29tJTJmY291cnNlJTJmZ28tdGhlLWNvbXBsZXRlLWRldmVsb3BlcnMtZ3VpZGUlMmYlM2Z1dG1fY2FtcGFpZ24lM2RCRy1TZWFyY2hfS2V5d29yZF9CZXRhX1Byb2ZfbGEuRU5fY2MuUk9XLUVuZ2xpc2glMjZ1dG1fc291cmNlJTNkYmluZyUyNnV0bV9tZWRpdW0lM2RwYWlkLXNlYXJjaCUyNnBvcnRmb2xpbyUzZEJpbmctUk9XLUVuZ2xpc2glMjZ1dG1fYXVkaWVuY2UlM2RteCUyNnV0bV90YWN0aWMlM2RuYiUyNnV0bV90ZXJtJTNkXy5fYWdfMTMyNDkxMzg5OTkxOTEzMV8uX2FkX18uX2t3X2dvbGFuZyUyNTIwbGVhcm5pbmclMjZ1dG1fY29udGVudCUzZHMlMjZmdW5uZWwlM2QlMjZ0ZXN0JTNkJTI2dXRtX2NhbXBhaWduX2lkJTNkNjM4NTk2MjMyJTI2bXNjbGtpZCUzZGQyOWM5ZDk2NDgyYzFiNTg0ZTI5ZjcyZGZlYmU1ZWQz%2526rlid%253Dd29c9d96482c1b584e29f72dfebe5ed3%26vqd%3D4%2D69069134739322945487794741771826607302%26iurl%3D%257B1%257DIG%253DB1E12993FAD846DA812190138406322A%2526CID%253D34E79249171264B6143085AA16706538%2526ID%253DDevEx%252C5037.1&amp;rut=0e6782d19d539a52f6b3165e2a646521867e00a7ce9863f81ec5ead247d6c3fe" class='result-link'>Advanced Golang Course - Start Now For a Special Price</a>
+                  (Sponsored link - <a
+                    href="https://duckduckgo.com/duckduckgo-help-pages/company/ads-by-microsoft-on-duckduckgo-private-search/"
+                    rel="nofollow" class="result-link">more info</a>)
+                </td>
+                
+            </tr>
+
+            
+              <tr class="result-sponsored">
+                <td>&nbsp;&nbsp;&nbsp;</td>
+                <td class='result-snippet'>
+                  Find the right Go Programming instructor for you. Any topic, skill level, or language. Learn Go Programming online at your own pace. Start today and improve your skills.
+                </td>
+              </tr>
+            
+
+            
+              <tr class="result-sponsored">
+                <td>&nbsp;&nbsp;&nbsp;</td>
+                <td>
+                  <span class='link-text'>udemy.com</span>
+                  
+                </td>
+              </tr>
+            
+
+            <tr>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+            </tr>
+          
+
+          
+      
+        
+            <tr>
+              
+                <td valign="top">
+                  
+                    2.&nbsp;
+                  
+                </td>
+                <td>
+                  <a rel="nofollow" href="//duckduckgo.com/l/?uddg=https%3A%2F%2Fpkg.go.dev%2Fcontext&amp;rut=2eb031d7b327c39ec0d06152e1e49fec0b0d762542979abc4732453a97b90bd5" class='result-link'>context package - context - Go Packages</a>
+                </td>
+                
+            </tr>
+
+            
+              
+                <!-- Only show abstract separately if there's a click URL (not EOF) -->
+                <tr>
+                  <td>&nbsp;&nbsp;&nbsp;</td>
+                  <td class='result-snippet'>
+                    <b>Package</b> <b>context</b> defines the <b>Context</b> type, which carries deadlines, cancellation signals, and other request-scoped values across API boundaries and between processes.
+                  </td>
+                </tr>
+              
+            
+
+            
+              <tr>
+                <td>&nbsp;&nbsp;&nbsp;</td>
+                <td>
+                  <span class='link-text'>pkg.go.dev/context</span>
+                  
+                    &nbsp;&nbsp;&nbsp;
+                    <span class='timestamp'>2026-09-01T00:00:00.0000000</span>
+                  
+                </td>
+              </tr>
+            
+
+            <tr>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+            </tr>
+
+        
+      
+        
+            <tr>
+              
+                <td valign="top">
+                  
+                    3.&nbsp;
+                  
+                </td>
+                <td>
+                  <a rel="nofollow" href="//duckduckgo.com/l/?uddg=https%3A%2F%2Fgo.dev%2Fblog%2Fcontext&amp;rut=13b15b6964edd7d3236e0fa04b8fd90ae648e27c7fab8339d1627248a15e530f" class='result-link'>Go Concurrency Patterns: Context - The Go Programming Language</a>
+                </td>
+                
+            </tr>
+
+            
+              
+                <!-- Only show abstract separately if there's a click URL (not EOF) -->
+                <tr>
+                  <td>&nbsp;&nbsp;&nbsp;</td>
+                  <td class='result-snippet'>
+                    An introduction to the Go <b>context</b> <b>package</b>.
+                  </td>
+                </tr>
+              
+            
+
+            
+              <tr>
+                <td>&nbsp;&nbsp;&nbsp;</td>
+                <td>
+                  <span class='link-text'>go.dev/blog/context</span>
+                  
+                </td>
+              </tr>
+            
+
+            <tr>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+            </tr>
+
+        
+      
+        
+            <tr>
+              
+                <td valign="top">
+                  
+                    4.&nbsp;
+                  
+                </td>
+                <td>
+                  <a rel="nofollow" href="//duckduckgo.com/l/?uddg=https%3A%2F%2Fgolangdoc.github.io%2Fpkg%2F1.12%2Fcontext%2Findex.html&amp;rut=205ccdeb2040cd0fd2e7cd9d6c629da7a080eea5bff517e8e21f752707290bb1" class='result-link'>context - The Go Programming Language</a>
+                </td>
+                
+            </tr>
+
+            
+              
+                <!-- Only show abstract separately if there's a click URL (not EOF) -->
+                <tr>
+                  <td>&nbsp;&nbsp;&nbsp;</td>
+                  <td class='result-snippet'>
+                    Overview <b>Package</b> <b>context</b> defines the <b>Context</b> type, which carries deadlines, cancelation signals, and other request-scoped values across API boundaries and between processes. Incoming requests to a server should create a <b>Context</b>, and outgoing calls to servers should accept a <b>Context</b>.
+                  </td>
+                </tr>
+              
+            
+
+            
+              <tr>
+                <td>&nbsp;&nbsp;&nbsp;</td>
+                <td>
+                  <span class='link-text'>golangdoc.github.io/pkg/1.12/context/index.html</span>
+                  
+                </td>
+              </tr>
+            
+
+            <tr>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+            </tr>
+
+        
+      
+        
+            <tr>
+              
+                <td valign="top">
+                  
+                    5.&nbsp;
+                  
+                </td>
+                <td>
+                  <a rel="nofollow" href="//duckduckgo.com/l/?uddg=https%3A%2F%2Fdev.to%2Fjones_charles_ad50858dbc0%2Fmastering%2Dgos%2Dcontext%2Dpackage%2Da%2Dpractical%2Dguide%2Dfor%2Deveryday%2Ddevs%2D1ll5&amp;rut=d677fdd4a7f42d6c6226f9902899ecb22d7845f1946161328a625879c11a98fc" class='result-link'>Mastering Go&#x27;s Context Package: A Practical Guide for Everyday Devs</a>
+                </td>
+                
+            </tr>
+
+            
+              
+                <!-- Only show abstract separately if there's a click URL (not EOF) -->
+                <tr>
+                  <td>&nbsp;&nbsp;&nbsp;</td>
+                  <td class='result-snippet'>
+                    Hey, Let&#x27;s Talk <b>Context</b>! If you&#x27;ve been coding in Go for a year or two, you&#x27;ve probably tangled with goroutines—those lightweight concurrency champs that make Go so fun. But here&#x27;s the catch: without some control, they&#x27;re like wild horses running free. Ever had a goroutine keep chugging after a client bails? Yeah, messy. That&#x27;s where Go&#x27;s <b>context</b> <b>package</b> swoops in—think of it ...
+                  </td>
+                </tr>
+              
+            
+
+            
+              <tr>
+                <td>&nbsp;&nbsp;&nbsp;</td>
+                <td>
+                  <span class='link-text'>dev.to/jones_charles_ad50858dbc0/mastering-gos-context-package-a-practical-guide-for-everyday-devs-1ll5</span>
+                  
+                    &nbsp;&nbsp;&nbsp;
+                    <span class='timestamp'>2025-05-24T00:00:00.0000000</span>
+                  
+                </td>
+              </tr>
+            
+
+            <tr>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+            </tr>
+
+        
+      
+        
+            <tr>
+              
+                <td valign="top">
+                  
+                    6.&nbsp;
+                  
+                </td>
+                <td>
+                  <a rel="nofollow" href="//duckduckgo.com/l/?uddg=https%3A%2F%2Fpkg.go.dev%2Fgolang.org%2Fx%2Fnet%2Fcontext&amp;rut=2889c6a0a5564a618b27a34d7da2ec33154a52495939cbf6f59b55ef92eb9409" class='result-link'>context package - golang.org/x/net/context - Go Packages</a>
+                </td>
+                
+            </tr>
+
+            
+              
+                <!-- Only show abstract separately if there's a click URL (not EOF) -->
+                <tr>
+                  <td>&nbsp;&nbsp;&nbsp;</td>
+                  <td class='result-snippet'>
+                    <b>Package</b> <b>context</b> has been superseded by the standard library <b>context</b> <b>package</b>.
+                  </td>
+                </tr>
+              
+            
+
+            
+              <tr>
+                <td>&nbsp;&nbsp;&nbsp;</td>
+                <td>
+                  <span class='link-text'>pkg.go.dev/golang.org/x/net/context</span>
+                  
+                    &nbsp;&nbsp;&nbsp;
+                    <span class='timestamp'>2026-08-12T00:00:00.0000000</span>
+                  
+                </td>
+              </tr>
+            
+
+            <tr>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+            </tr>
+
+        
+      
+        
+            <tr>
+              
+                <td valign="top">
+                  
+                    7.&nbsp;
+                  
+                </td>
+                <td>
+                  <a rel="nofollow" href="//duckduckgo.com/l/?uddg=https%3A%2F%2Fmedium.com%2F%40akintobiidris%2Funderstanding%2Dgos%2Dcontext%2Dpackage%2Da%2Dguide%2Dto%2Dproper%2Dusage%2Db568e200345c&amp;rut=1b13f26a764e92fb6479abce5a413573b5d78b17d44bf2393ba49deefde9be4a" class='result-link'>Understanding Go&#x27;s context Package: A Guide to Proper Usage</a>
+                </td>
+                
+            </tr>
+
+            
+              
+                <!-- Only show abstract separately if there's a click URL (not EOF) -->
+                <tr>
+                  <td>&nbsp;&nbsp;&nbsp;</td>
+                  <td class='result-snippet'>
+                    A comprehensive guide to understanding and correctly implementing Go&#x27;s <b>context</b> <b>package</b> for robust concurrent applications In the world of concurrent programming in Go, the <b>context</b> <b>package</b> stands ...
+                  </td>
+                </tr>
+              
+            
+
+            
+              <tr>
+                <td>&nbsp;&nbsp;&nbsp;</td>
+                <td>
+                  <span class='link-text'>medium.com/@akintobiidris/understanding-gos-context-package-a-guide-to-proper-usage-b568e200345c</span>
+                  
+                </td>
+              </tr>
+            
+
+            <tr>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+            </tr>
+
+        
+      
+        
+            <tr>
+              
+                <td valign="top">
+                  
+                    8.&nbsp;
+                  
+                </td>
+                <td>
+                  <a rel="nofollow" href="//duckduckgo.com/l/?uddg=https%3A%2F%2Fdev.to%2Fpedro%2Dsilva%2Ddev%2Fgolang%2Dcontext%2Dpackage%2Da%2Dguide%2Dto%2Done%2Dof%2Dthe%2Dmost%2Dused%2Dpackages%2Din%2Dgo%2Da3g&amp;rut=7ff96062118930e6e9bcba2c0f63d9ffe6bb5805f4d5ef48f126508fc753b382" class='result-link'>Golang Context Package: A Guide to One of the Most Used Packages in Go</a>
+                </td>
+                
+            </tr>
+
+            
+              
+                <!-- Only show abstract separately if there's a click URL (not EOF) -->
+                <tr>
+                  <td>&nbsp;&nbsp;&nbsp;</td>
+                  <td class='result-snippet'>
+                    That&#x27;s exactly the problem the <b>context</b> <b>package</b> was made to solve. It gives us a standard, super-powerful way to handle deadlines, timeouts, cancellation signals, and to carry request-specific data around.
+                  </td>
+                </tr>
+              
+            
+
+            
+              <tr>
+                <td>&nbsp;&nbsp;&nbsp;</td>
+                <td>
+                  <span class='link-text'>dev.to/pedro-silva-dev/golang-context-package-a-guide-to-one-of-the-most-used-packages-in-go-a3g</span>
+                  
+                    &nbsp;&nbsp;&nbsp;
+                    <span class='timestamp'>2025-07-01T00:00:00.0000000</span>
+                  
+                </td>
+              </tr>
+            
+
+            <tr>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+            </tr>
+
+        
+      
+        
+            <tr>
+              
+                <td valign="top">
+                  
+                    9.&nbsp;
+                  
+                </td>
+                <td>
+                  <a rel="nofollow" href="//duckduckgo.com/l/?uddg=https%3A%2F%2Fwww.golang101.com%2Fadvanced%2Dgo%2Dconcepts%2Fcontext%2Dpackage%2F&amp;rut=6200df66392bef3612595a3aa92cba13d60a42407885ea3b65d71ccf65b24cc6" class='result-link'>Context Package - Golang 101</a>
+                </td>
+                
+            </tr>
+
+            
+              
+                <!-- Only show abstract separately if there's a click URL (not EOF) -->
+                <tr>
+                  <td>&nbsp;&nbsp;&nbsp;</td>
+                  <td class='result-snippet'>
+                    Understanding the <b>Context</b> <b>Package</b> in Go In Go, the <b>context</b> <b>package</b> provides a way to manage cancellable <b>contexts</b> that can be used to signal the termination of long-running operations. In this article, we&#x27;ll explore the concept of <b>context</b> and how it&#x27;s used in Go. What is <b>Context</b>? A <b>context</b> represents a request or operation that may need to be cancelled due to some external reason, such as a ...
+                  </td>
+                </tr>
+              
+            
+
+            
+              <tr>
+                <td>&nbsp;&nbsp;&nbsp;</td>
+                <td>
+                  <span class='link-text'>www.golang101.com/advanced-go-concepts/context-package/</span>
+                  
+                </td>
+              </tr>
+            
+
+            <tr>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+            </tr>
+
+        
+      
+        
+            <tr>
+              
+                <td valign="top">
+                  
+                    10.&nbsp;
+                  
+                </td>
+                <td>
+                  <a rel="nofollow" href="//duckduckgo.com/l/?uddg=https%3A%2F%2Ftip.golang.org%2Fpkg%2Fcontext%2F%3Fm%3Dold&amp;rut=4bc0043ee94755510143e3cdfe74250f9a833ab02bb5f3bbe0d0f4d2201a09f7" class='result-link'>Package context - The Go Programming Language</a>
+                </td>
+                
+            </tr>
+
+            
+              
+                <!-- Only show abstract separately if there's a click URL (not EOF) -->
+                <tr>
+                  <td>&nbsp;&nbsp;&nbsp;</td>
+                  <td class='result-snippet'>
+                    Overview <b>Package</b> <b>context</b> defines the <b>Context</b> type, which carries deadlines, cancellation signals, and other request-scoped values across API boundaries and between processes. Incoming requests to a server should create a <b>Context</b>, and outgoing calls to servers should accept a <b>Context</b>.
+                  </td>
+                </tr>
+              
+            
+
+            
+              <tr>
+                <td>&nbsp;&nbsp;&nbsp;</td>
+                <td>
+                  <span class='link-text'>tip.golang.org/pkg/context/?m=old</span>
+                  
+                </td>
+              </tr>
+            
+
+            <tr>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+            </tr>
+
+        
+      
+        
+            <tr>
+              
+                <td valign="top">
+                  
+                    11.&nbsp;
+                  
+                </td>
+                <td>
+                  <a rel="nofollow" href="//duckduckgo.com/l/?uddg=https%3A%2F%2Fgolangdocs.com%2Fgolang%2Dcontext%2Dpackage&amp;rut=018cb1975943616f97352b42c1eae756d4dd343313cb35a6dfe5362605155210" class='result-link'>Golang Context Package</a>
+                </td>
+                
+            </tr>
+
+            
+              
+                <!-- Only show abstract separately if there's a click URL (not EOF) -->
+                <tr>
+                  <td>&nbsp;&nbsp;&nbsp;</td>
+                  <td class='result-snippet'>
+                    A brief introduction to the <b>Golang</b> <b>context</b> <b>package</b>. How to create a <b>context</b>, <b>context</b> values, WithCancel, WithDeadline, and WithTimeout functions.
+                  </td>
+                </tr>
+              
+            
+
+            
+              <tr>
+                <td>&nbsp;&nbsp;&nbsp;</td>
+                <td>
+                  <span class='link-text'>golangdocs.com/golang-context-package</span>
+                  
+                </td>
+              </tr>
+            
+
+            <tr>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+            </tr>
+
+        
+      
+    
+
+    
+      
+      <tr>
+        <td colspan=2>
+          
+          
+            <!-- Next Page Button Sub-template -->
+<form class="next_form" action="/lite/" method="post">
+    <input type="submit" class='navbutton' value="Next Page &gt;">
+    <input type="hidden" name="q" value="golang context package">
+    <input type="hidden" name="s" value="10">
+    <input type="hidden" name="nextParams" value="">
+    <input type="hidden" name="v" value="l">
+    <input type="hidden" name="o" value="json">
+    <input type="hidden" name="dc" value="12">
+    <input type="hidden" name="api" value="d.js">
+    <input type="hidden" name="vqd" value="4-70995434087772222586881006054021529992">
+    &nbsp;&nbsp;&nbsp;&nbsp;
+    
+    
+    
+      <input name="kl" value="wt-wt" type="hidden">
+    
+    
+    
+    
+</form>
+          
+          
+        </td>
+      </tr>
+    
+  </table>
+
+  <p class='extra'>&nbsp;</p>
+
+  <form action="/lite/" method="post">
+      <input class='query' type="text" size="40" name="q" value="golang context package" >
+      <input class='submit' type="submit" value="Search">
+      
+      
+      
+      
+      
+        <input name="kl" value="wt-wt" type="hidden">
+      
+  </form>
+
+  <p class='extra'>&nbsp;</p>
+
+  
+    <img src="//duckduckgo.com/t/sl_l"/>
+  
+  <div id='end-spacer'>&nbsp;</div>
+
+</body>
+</html>

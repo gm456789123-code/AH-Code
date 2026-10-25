@@ -1,0 +1,125 @@
+---
+// Docs Page — Sent-Code IDE
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Documentation — Sent-Code IDE</title>
+</head>
+<body class="bg-[#0b0c0e] text-[#d4d6da] font-sans min-h-screen">
+
+  <!-- Nav -->
+  <header class="border-b border-[#151820] py-4 px-6 sticky top-0 bg-[#0b0c0e]/90 backdrop-blur-md z-50">
+    <nav class="max-w-5xl mx-auto flex items-center justify-between">
+      <a href="/" class="flex items-center gap-2.5">
+        <div class="w-7 h-7 rounded-lg bg-gradient-to-tr from-cyan-500 to-emerald-400 text-gray-950 flex items-center justify-center font-bold text-sm">⚡</div>
+        <span class="font-bold text-white text-sm">Sent-Code Docs</span>
+      </a>
+      <a href="/download" class="px-3 py-1.5 bg-white text-gray-950 rounded-lg text-xs font-semibold hover:bg-gray-100 transition">Download →</a>
+    </nav>
+  </header>
+
+  <div class="max-w-5xl mx-auto px-6 py-10 flex gap-8">
+
+    <!-- Sidebar TOC -->
+    <aside class="w-48 shrink-0 hidden md:block">
+      <nav class="sticky top-24 space-y-0.5 text-xs">
+        <p class="text-gray-600 font-semibold mb-2 uppercase tracking-wider text-[10px]">Getting Started</p>
+        <a href="#quickstart" class="block px-2.5 py-1.5 rounded-lg text-gray-400 hover:text-white hover:bg-[#1a1d25] transition">Quick Start</a>
+        <a href="#models" class="block px-2.5 py-1.5 rounded-lg text-gray-400 hover:text-white hover:bg-[#1a1d25] transition">AI Models</a>
+        <a href="#vision" class="block px-2.5 py-1.5 rounded-lg text-gray-400 hover:text-white hover:bg-[#1a1d25] transition">Vision (Screenshot)</a>
+        <p class="text-gray-600 font-semibold mt-4 mb-2 uppercase tracking-wider text-[10px]">Features</p>
+        <a href="#vibe" class="block px-2.5 py-1.5 rounded-lg text-gray-400 hover:text-white hover:bg-[#1a1d25] transition">Vibe Coding Loop</a>
+        <a href="#history" class="block px-2.5 py-1.5 rounded-lg text-gray-400 hover:text-white hover:bg-[#1a1d25] transition">Session History</a>
+        <a href="#quota" class="block px-2.5 py-1.5 rounded-lg text-gray-400 hover:text-white hover:bg-[#1a1d25] transition">Quota Rings</a>
+        <p class="text-gray-600 font-semibold mt-4 mb-2 uppercase tracking-wider text-[10px]">API</p>
+        <a href="#api" class="block px-2.5 py-1.5 rounded-lg text-gray-400 hover:text-white hover:bg-[#1a1d25] transition">Web API Reference</a>
+      </nav>
+    </aside>
+
+    <!-- Content -->
+    <main class="flex-1 max-w-2xl">
+
+      <h1 class="text-3xl font-bold text-white mb-2">Documentation</h1>
+      <p class="text-gray-400 text-sm mb-10 leading-relaxed">Sent-Code is a native Windows IDE that combines cloud Grok Build AI with local Qwen2.5-Coder models for offline privacy.</p>
+
+      <!-- Quick Start -->
+      <section id="quickstart" class="mb-12">
+        <h2 class="text-lg font-bold text-white mb-4 pb-2 border-b border-[#1b1e27]">🚀 Quick Start</h2>
+        <ol class="space-y-4 text-sm text-gray-400">
+          <li><strong class="text-white">1. Download</strong> — Get <code class="bg-[#1a1d25] px-1.5 py-0.5 rounded text-cyan-300 text-xs">Sent-Code.exe</code> from the <a href="/download" class="text-cyan-400 hover:underline">download page</a>. No installer needed.</li>
+          <li><strong class="text-white">2. Run</strong> — Double-click to launch. Allow Windows Firewall if prompted (needed for Grok Build).</li>
+          <li><strong class="text-white">3. Choose AI Mode</strong> — Open <strong class="text-white">Settings → Models</strong> and select either Grok Build (cloud) or Qwen-Coder (local).</li>
+          <li><strong class="text-white">4. Start a Project</strong> — Click <strong class="text-white">New Chat</strong> or open a folder from the sidebar. Type your request or paste a screenshot.</li>
+        </ol>
+      </section>
+
+      <!-- AI Models -->
+      <section id="models" class="mb-12">
+        <h2 class="text-lg font-bold text-white mb-4 pb-2 border-b border-[#1b1e27]">🤖 AI Models</h2>
+        <div class="space-y-4 text-sm text-gray-400">
+          <div>
+            <h3 class="text-white font-semibold mb-1">Grok Build (Cloud)</h3>
+            <p>Requires xAI account (free). Run up to <strong class="text-white">120 prompts/week</strong> at no cost. Supports multimodal vision (paste images). 4 modes: Fast / Auto / Expert / Heavy.</p>
+            <p class="text-xs mt-1.5 text-gray-500">Login via <strong class="text-white">Settings → Login with Grok</strong> — a browser tab opens for OAuth device flow.</p>
+          </div>
+          <div>
+            <h3 class="text-white font-semibold mb-1">Qwen-Coder (Local)</h3>
+            <p>Runs fully offline via Ollama sidecar. Downloads <strong class="text-white">Qwen2.5-Coder-7B-Instruct</strong> (~4.7 GB) on first use. Needs 8 GB RAM. No internet, no API key.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Vision -->
+      <section id="vision" class="mb-12">
+        <h2 class="text-lg font-bold text-white mb-4 pb-2 border-b border-[#1b1e27]">👁️ Screenshot → Code (Vision)</h2>
+        <div class="text-sm text-gray-400 space-y-2">
+          <p>Press <code class="bg-[#1a1d25] px-1.5 py-0.5 rounded text-cyan-300 text-xs">Ctrl+V</code> to paste any screenshot into the chat. You can also drag-and-drop image files.</p>
+          <p>Images are analyzed via <strong class="text-white">Groq Cloud Vision</strong> (Llama 4 Scout — 14B) at ~0.3 second speed, then the AI generates code matching the UI.</p>
+          <p>Supported formats: PNG, JPEG, WebP, GIF</p>
+        </div>
+      </section>
+
+      <!-- Vibe Coding Loop -->
+      <section id="vibe" class="mb-12">
+        <h2 class="text-lg font-bold text-white mb-4 pb-2 border-b border-[#1b1e27]">🔄 Vibe Coding Loop (Phase 3)</h2>
+        <p class="text-sm text-gray-400 mb-3">Coming in the next update. The AI will:</p>
+        <ul class="text-sm text-gray-400 space-y-1.5">
+          <li class="flex items-center gap-2"><span class="text-cyan-400">→</span> Read your project files automatically</li>
+          <li class="flex items-center gap-2"><span class="text-cyan-400">→</span> Write code changes directly to disk</li>
+          <li class="flex items-center gap-2"><span class="text-cyan-400">→</span> Run your build command and capture errors</li>
+          <li class="flex items-center gap-2"><span class="text-cyan-400">→</span> Auto-fix until the build passes</li>
+          <li class="flex items-center gap-2"><span class="text-cyan-400">→</span> Create a Git checkpoint before each edit</li>
+        </ul>
+      </section>
+
+      <!-- API Reference -->
+      <section id="api" class="mb-12">
+        <h2 class="text-lg font-bold text-white mb-4 pb-2 border-b border-[#1b1e27]">🔌 Web API Reference</h2>
+        <div class="space-y-4 text-xs">
+          {[
+            { method: "GET", path: "/api/health", desc: "Health check — returns server status and model info" },
+            { method: "POST", path: "/api/auth/login", desc: "Login or auto-register. Body: { email }" },
+            { method: "GET", path: "/api/auth/me?token=xxx", desc: "Get current user profile" },
+            { method: "POST", path: "/api/tokens/verify", desc: "Check & optionally deduct usage quota. Body: { token, deduct? }" },
+            { method: "POST", path: "/api/vision/analyze", desc: "Groq Cloud Vision analysis. Body: { imageBase64, prompt, token? }" },
+            { method: "POST", path: "/api/telemetry/submit", desc: "Submit training data pair. Body: { token, type, prompt, response }" },
+          ].map(({ method, path, desc }) => (
+            <div class="flex gap-3 items-start">
+              <span class={`shrink-0 px-2 py-0.5 rounded font-mono font-bold text-[10px] ${method === 'GET' ? 'bg-emerald-900/50 text-emerald-400' : 'bg-blue-900/50 text-blue-400'}`}>{method}</span>
+              <div>
+                <code class="text-cyan-300">{path}</code>
+                <p class="text-gray-500 mt-0.5">{desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+    </main>
+  </div>
+</body>
+</html>

@@ -1,0 +1,95 @@
+@import "tailwindcss";
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #121316;
+  color: #e3e5e8;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  overflow: hidden;
+}
+
+/* Text selection highlight (คลุมดำ) styling for sleek dark aesthetic */
+::selection {
+  background-color: rgba(6, 182, 212, 0.45) !important;
+  color: #ffffff !important;
+}
+
+::-moz-selection {
+  background-color: rgba(6, 182, 212, 0.45) !important;
+  color: #ffffff !important;
+}
+
+/* Force selectable text in chat and preview containers */
+.chat-selectable,
+.select-text,
+.select-text * {
+  -webkit-user-select: text !important;
+  user-select: text !important;
+}
+
+.chat-selectable,
+.select-text {
+  cursor: text;
+}
+
+/* Custom sleek scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #2a2d34;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3b3f49;
+}
+
+@keyframes flow-gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-gradient-flow {
+  background: linear-gradient(
+    90deg,
+    #06b6d4 0%,
+    #38bdf8 20%,
+    #818cf8 40%,
+    #c084fc 60%,
+    #ec4899 80%,
+    #06b6d4 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: flow-gradient 4s ease-in-out infinite;
+}
+
+/* Wails Frameless Window Dragging */
+.wails-drag {
+  --wails-draggable: drag;
+  user-select: none;
+}
+
+.wails-no-drag {
+  --wails-draggable: no-drag;
+}
+
+

@@ -1,0 +1,36 @@
+{
+  "name": "sent-code-web",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Unified Web Platform for Sent-Code: Express Backend & Admin CMS + Astro Frontend",
+  "main": "server/index.js",
+  "scripts": {
+    "start": "node --env-file=.env server/index.js",
+    "dev:server": "node --env-file=.env --watch server/index.js",
+    "dev:client": "cd client && npm run dev",
+    "build:client": "cd client && npm run build",
+    "build": "npm run build:client",
+    "db:up": "docker compose up -d",
+    "db:down": "docker compose down",
+    "db:logs": "docker compose logs -f",
+    "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\""
+  },
+  "keywords": [
+    "sent-code",
+    "express",
+    "astro",
+    "vibe-coding"
+  ],
+  "author": "Sent-Code Team",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "multer": "^1.4.5-lts.1",
+    "mysql2": "^3.24.4"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}
